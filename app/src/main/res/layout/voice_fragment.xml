@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="Speech Translation"
+        android:textColor="@color/white"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/mic"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/micicon"
+        android:scaleType="fitStart"
+        android:src="@drawable/micb" />
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundsp"
+        android:gravity="center"
+        android:hint="-Select Language-"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17sp"
+        app:spinner_arrow_gravity="end"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_divider_color="@color/white"
+        app:spinner_item_array="@array/lang"
+        app:spinner_popup_animation="dropdown"
+        app:spinner_popup_background="#121212"
+        app:spinner_popup_elevation="14dp" />
+
+    <Button
+        android:id="@+id/translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Translate" />
+
+    <EditText
+        android:id="@+id/translatedText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext"
+        android:textColorHint="@color/white"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:gravity="top"
+        android:hint="Translated Text..."
+        android:inputType="textMultiLine"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/Pitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Pitch"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <SeekBar
+            android:id="@+id/seek_bar_pitch"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/Pitch"
+            android:layout_alignBottom="@+id/Pitch"
+            android:layout_centerVertical="@+id/Pitch"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/Speed"
+            android:progress="50"
+            android:progressBackgroundTint="#D3B0FD"
+            android:progressTint="@color/colorPrimary"
+            android:thumbTint="@color/colorPrimary"
+            tools:targetApi="lollipop" />
+
+        <TextView
+            android:id="@+id/Speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Pitch"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Speed"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <SeekBar
+            android:id="@+id/seek_bar_speed"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Pitch"
+            android:layout_alignTop="@+id/Speed"
+            android:layout_alignBottom="@+id/Speed"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/Speed"
+            android:layout_toRightOf="@+id/Speed"
+            android:progress="50"
+            android:progressBackgroundTint="#D3B0FD"
+            android:progressTint="@color/colorPrimary"
+            android:thumbTint="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/component"
+        tools:ignore="VectorDrawableCompat" />
+</LinearLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Image Translation"
+        android:textColor="@color/white"
+        android:textSize="36sp" />
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/langp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/roundsp"
+        android:hint="-Source-"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17sp"
+        app:spinner_arrow_gravity="end"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_divider_color="@color/white"
+        app:spinner_item_array="@array/lang"
+        app:spinner_popup_animation="dropdown"
+        app:spinner_popup_background="#121212"
+        app:spinner_popup_elevation="14dp" />
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/langp"
+        android:background="@drawable/roundsp"
+        android:hint="-Target-"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17sp"
+        app:spinner_arrow_gravity="end"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_divider_color="@color/white"
+        app:spinner_item_array="@array/lang"
+        app:spinner_popup_animation="dropdown"
+        app:spinner_popup_background="#121212"
+        app:spinner_popup_elevation="14dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/langp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@drawable/iicon"
+        tools:ignore="VectorDrawableCompat"
+
+        />
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Recognize Text" />
+
+    <EditText
+        android:id="@+id/getT"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/button3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Recognized Text..."
+        android:inputType="textMultiLine"
+        android:paddingLeft="5dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
+    <Button
+        android:id="@+id/Trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getT"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/Translate" />
+
+    <EditText
+        android:id="@+id/tran"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/Trans"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Translated Text..."
+        android:inputType="textMultiLine"
+        android:paddingLeft="5dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+</RelativeLayout>

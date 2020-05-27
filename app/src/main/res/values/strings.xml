@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">translator</string>
+    <string-array name="lang">
+        <item>English</item>
+        <item>Korean</item>
+        <item>Hindi</item>
+        <item>Japanese</item>
+        <item>French</item>
+        <item>Chinese</item>
+        <item>Germany</item>
+        <item>Italian</item>
+        <item>Russian</item>
+    </string-array>
+    <string name="errorTranslate">Language not found and cannot be translated</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="create_a_account">Create a account?</string>
+    <string name="username">username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="title_activity_signup">Sign up</string>
+    <string name="title_activity_message">Message</string>
+    <string name="Enter_text">Enter Text…</string>
+    <string name="Translated_text">Translated Text…</string>
+    <string name="Translate">Translate</string>
+    <string name="Select_Language">-Select Target Language-</string>
+    <string name="Text_Translation">Text Translation</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Voice"
+        android:icon="@drawable/ic_mic_black_24dp"
+        android:title="Voice" />
+    <item
+        android:id="@+id/Text"
+        android:icon="@drawable/translate"
+        android:iconTint="@color/white"
+        android:title="Text" />
+    <item
+        android:id="@+id/Image"
+        android:icon="@drawable/image"
+        android:title="Image" />
+    <item
+        android:id="@+id/Chat"
+        android:icon="@drawable/ic_message_black_24dp"
+        android:title="Chat" />
+    <item
+        android:id="@+id/Profile"
+        android:icon="@drawable/ic_account_box_black_24dp"
+        android:title="Account"
+        />
+</menu>

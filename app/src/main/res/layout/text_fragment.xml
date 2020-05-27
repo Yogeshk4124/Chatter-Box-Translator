@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#121212">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:text="@string/Text_Translation" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_below="@id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="start|top"
+        android:textColorHint="@color/white"
+        android:inputType="textMultiLine"
+        android:paddingLeft="5dp"
+        android:hint="@string/Enter_text"
+        android:background="@drawable/edittext"
+        />
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/lang"
+        android:layout_below="@id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundsp"
+        android:hint="@string/Select_Language"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17sp"
+        app:spinner_arrow_gravity="end"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_divider_color="@color/white"
+        app:spinner_item_array="@array/lang"
+        app:spinner_popup_animation="dropdown"
+        app:spinner_popup_background="#121212"
+        app:spinner_popup_elevation="14dp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Translate"
+    android:id="@+id/Translate"
+    android:background="@drawable/round_button"
+    android:layout_below="@+id/lang"
+    android:layout_marginTop="15dp"
+    android:layout_marginRight="70dp"
+    android:layout_marginLeft="70dp"
+    android:backgroundTint="@color/colorPrimary"
+    />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_below="@+id/Translate"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:textColorHint="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:gravity="start|top"
+        android:paddingLeft="5dp"
+        android:inputType="textMultiLine"
+        android:hint="@string/Translated_text"
+        android:background="@drawable/edittext"
+        android:autofillHints="@string/Translated_text" />
+
+</RelativeLayout>

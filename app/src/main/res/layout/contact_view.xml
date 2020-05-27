@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#121212"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/profile_pic"
+        android:layout_alignTop="@+id/name"
+        android:src="@drawable/pu"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#FFFFFF"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/profile_pic"
+        />
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_toEndOf="@+id/profile_pic"
+        android:layout_below="@+id/name"
+        android:textColor="#F2F2F2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Phone Number"
+        android:textSize="18dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/white"
+        android:layout_below="@+id/phone"
+        />
+
+
+</RelativeLayout>

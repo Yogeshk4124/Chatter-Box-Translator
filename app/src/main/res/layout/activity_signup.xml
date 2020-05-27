@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Signup">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="268dp"
+        android:layout_height="199dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/otp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView5"
+        android:layout_centerHorizontal="true"
+        android:text="Verify Your Number"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Please enter your Country code  and phone number for verification"
+        android:textColor="#FFFFFF" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="10dp"
+        android:hint="Code"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        app:met_baseColor="#FFFFFF"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="@color/colorPrimary"
+        app:met_textColorHint="#FFFFFF" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/code"
+        android:layout_toRightOf="@+id/code"
+        android:hint="Phone"
+        android:inputType="textPhonetic"
+        app:met_baseColor="@color/colorPrimary"
+        app:met_clearButton="true"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="@color/colorPrimary"
+        app:met_textColor="#FFFFFF"
+        app:met_textColorHint="@color/white"/>
+
+    <Button
+        android:id="@+id/getotp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Get OTP"
+        android:textColor="#000000" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getotp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="OTP"
+        android:inputType="textPassword"
+        app:met_baseColor="@color/colorPrimary"
+        app:met_clearButton="true"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="@color/colorPrimary"
+        app:met_textColor="#FFFFFF"
+        app:met_textColorHint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/action_sign_in"
+        android:textColor="#000000" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-214dp"
+        android:visibility="gone" />
+
+    <com.github.jlmd.animatedcircleloadingview.AnimatedCircleLoadingView
+        android:id="@+id/circle_loading_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="#121212"
+        android:translationZ="200dp"
+        android:visibility="invisible"
+        app:mainColor="@color/colorPrimary"
+        app:secondaryColor="@color/colorPrimary"
+        app:textColor="@color/white" />
+</RelativeLayout>
