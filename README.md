@@ -23,7 +23,7 @@ The app consists of 5 main tasks:
 * OCR API: [https://ocr.space/ocrapi](https://ocr.space/ocrapi)
 
 ## Screenshot
-<img src="Screenshots/1VerifyCrop.png" width="400"><img src="Screenshots/2ProfileInfoCrop.png" width="200">
-<img src="Screenshots/3VoiceTranslationCrop.png" width="200"><img src="Screenshots/4textTranslationCrop.png" width="200">
-<img src="Screenshots/5ImageTranslationCrop.png" width="200"><img src="Screenshots/6ChatCrop.png" width="200">
-<img src="Screenshots/7AccountCrop.png" width="200">
+<img src="Screenshots/1VerifyCrop.png" width="300"><img src="Screenshots/2ProfileInfoCrop.png" width="300">
+<img src="Screenshots/3VoiceTranslationCrop.png" width="300"><img src="Screenshots/4textTranslationCrop.png" width="300">
+<img src="Screenshots/5ImageTranslationCrop.png" width="300"><img src="Screenshots/6ChatCrop.png" width="300">
+<img src="Screenshots/7AccountCrop.png" width="300">
