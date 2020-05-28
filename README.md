@@ -26,4 +26,4 @@ The app consists of 5 main tasks:
 <img src="Screenshots/1VerifyCrop.png" width="300"><img src="Screenshots/2ProfileInfoCrop.png" width="300">
 <img src="Screenshots/3VoiceTranslationCrop.png" width="300"><img src="Screenshots/4textTranslationCrop.png" width="300">
 <img src="Screenshots/5ImageTranslationCrop.png" width="300"><img src="Screenshots/6ChatCrop.png" width="300">
-<img src="Screenshots/7AccountCrop.png" width="300">
+<img src="Screenshots/7Account.png" width="300">
