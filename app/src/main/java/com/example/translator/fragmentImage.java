@@ -85,7 +85,7 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
 
     //
     private IOCRCallBack mIOCRCallBack;
-    private String mAPiKey = "498d1eac7088957"; //TODO Add your own Registered API key
+    private String mAPiKey = "API KEY"; //TODO Add your own Registered API key
     private boolean isOverlayRequired;
     private String mImageUrl="";
     private String mLanguage;
