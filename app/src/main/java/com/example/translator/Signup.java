@@ -66,9 +66,6 @@ public class Signup extends AppCompatActivity {
         //(main)progressBar=findViewById(R.id.progressbar);
         phone = findViewById(R.id.phone);
         getotp=findViewById(R.id.getotp);
-        otp.setText("123456");
-        code.setText("+91");
-        phone.setText("8194992328");
         // pd=new ProgressDialog(signexp.this);
         animatedCircleLoadingView=findViewById(R.id.circle_loading_view);
 
