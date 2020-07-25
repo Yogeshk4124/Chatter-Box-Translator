@@ -84,7 +84,7 @@ public class ifragmentchat extends Fragment {
         final ArrayList img=new ArrayList<>();
         final ArrayList lang=new ArrayList<>();
         Query Q= FirebaseDatabase.getInstance().getReference("Chatlist").child(Objects.requireNonNull(my.getPhoneNumber()));
-         Toast.makeText(getContext(),"GOt it:"+my.getPhoneNumber(),Toast.LENGTH_LONG).show();
+//         Toast.makeText(getContext(),"GOt it:"+my.getPhoneNumber(),Toast.LENGTH_LONG).show();
         Q.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -94,7 +94,7 @@ public class ifragmentchat extends Fragment {
                     img.add(ds.child("Img").getValue(String.class));
                     name.add(ds.child("Name").getValue(String.class));
                     phone.add(ds.child("Phone").getValue(String.class));
-                    lang.add(ds.child("Lang").getValue(String.class));
+                    lang.add(ds.child("Language").getValue(String.class));
                //     Toast.makeText(getContext(),"I am searching\n"+ds.child("Phone").getValue(String.class)+"\n"+ds.child("Name").getValue(String.class)+"\n"+ds.child("Img").getValue(String.class)+"\nLang:"+ds.child("Lang").getValue(String.class),Toast.LENGTH_LONG).show();
 
                 }
@@ -103,6 +103,7 @@ public class ifragmentchat extends Fragment {
                 names2=name;
                 img2=img;
                 lang2=lang;
+
                 Adapter2 adapter = new Adapter2(getContext(),names2, phone2, img2);
                 l.setAdapter(adapter);
             }
@@ -120,29 +121,17 @@ public class ifragmentchat extends Fragment {
                 intent.putExtra("Name",names2.get(position));
                 intent.putExtra("Img",img2.get(position));
                 intent.putExtra("Lang",lang2.get(position));
+//                Toast.makeText(getContext(),"rlang:"+names2.get(position),Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });
-       // display();
-        //    ArrayAdapter<String>arrayAdapter=new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,contacts);
+
         return v;
     }
 
-//    private void display(){
-//        //Toast.makeText(getContext(),"phone:"+phone2.isEmpty(),Toast.LENGTH_LONG).show();
-//        for(int i=0;i<phone2.size();i++)
-//        {
-//            Log.d("Phone"+i,phone2.get(i));
-//            Log.d("Name"+i,names2.get(i));
-//            Log.d("Image"+i,img2.get(i));
-//        }
-//    }
     static class Adapter2 extends ArrayAdapter<String> {
 
         Context context;
-        //        String rTitle[];
-//        String rDescription[];
-//        String rImgs[];
         ArrayList<String> rTitle;
         ArrayList<String> rDescription;
         ArrayList<String> rImgs;
@@ -170,9 +159,7 @@ public class ifragmentchat extends Fragment {
             myTitle.setText(rTitle.get(position));
             myDescription.setText(rDescription.get(position));
             Picasso.get().load(rImgs.get(position)).into(images);
-       //     Toast.makeText(getContext(),"I am searching for\n"+rTitle.get(position),Toast.LENGTH_LONG).show();
-         //   Toast.makeText(getContext(),"GOt it",Toast.LENGTH_LONG).show();
-//            Log.d("Hola:",rTitle.get(position));
+
             return row;
         }
     }

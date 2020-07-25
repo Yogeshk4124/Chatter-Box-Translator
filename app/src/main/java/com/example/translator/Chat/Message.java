@@ -61,6 +61,7 @@ public class Message extends AppCompatActivity {
         rImg=getIntent().getStringExtra("Img");
         rName=getIntent().getStringExtra("Name");
         rlang=getIntent().getStringExtra("Lang");
+//        Toast.makeText(getApplicationContext(),"rlang:"+rlang,Toast.LENGTH_LONG).show();
         receiverName.setText(rName);
         Picasso.get().load(rImg).into(receiverImg);
         msg=findViewById(R.id.msgsend);
@@ -69,12 +70,10 @@ public class Message extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager.setStackFromEnd(true);
         chatview.setLayoutManager(linearLayoutManager);
-        Toast.makeText(Message.this," "+my.getUid()+"\n"+my.getPhoneNumber(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(Message.this," "+my.getUid()+"\n"+my.getPhoneNumber(),Toast.LENGTH_LONG).show();
         read();
 //        Toast.makeText(Message.this,"rlang2:"+rlang,Toast.LENGTH_LONG).show();
         // identify();
-
-
     }
     public void uploadTask(View view) {
 //        Toast.makeText(this, "button clicked...", Toast.LENGTH_SHORT).show();
@@ -173,7 +172,6 @@ public class Message extends AppCompatActivity {
 //            case"fr":langCode= FirebaseTranslateLanguage.FR;
 //                break;
 //        }
-
         translateText(langCode);
 
     }
@@ -273,7 +271,7 @@ public class Message extends AppCompatActivity {
         protected void onPostExecute(String string) {
 
             Log.i(TAG, "onPostExecute: " + tText);
-            Toast.makeText(Message.this,"2here Tmsg:"+tText,Toast.LENGTH_LONG).show();
+//            Toast.makeText(Message.this,"2here Tmsg:"+tText,Toast.LENGTH_LONG).show();
             final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist")
                     .child(my.getPhoneNumber())
                     .child(rPhone);
@@ -334,6 +332,7 @@ public class Message extends AppCompatActivity {
             });
             read();
             send.setEnabled(true);
+            msg.setText("");
         }
     }
 }

@@ -85,10 +85,10 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
 
     //
     private IOCRCallBack mIOCRCallBack;
-    private String mAPiKey = "API KEY"; //TODO Add your own Registered API key
+    private String mAPiKey = "498d1eac7088957"; //TODO Add your own Registered API key
     private boolean isOverlayRequired;
     private String mImageUrl="";
-    private String mLanguage;
+    private String mLanguage="";
     private TextView mTxtResult;
 
     // Now create matcher object.
@@ -158,19 +158,24 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
             @Override
             public void onClick(View v) {
 //                identify();
-                getCodes();
-                for (int i=0; i<10; i++) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+                getOCRCodes();
+//                for (int i=0; i<10; i++) {
+//                    try {
+//                        Thread.sleep(100);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                if(s1.getText().equals(""))
+//                    s1.setError("");
+//                else{
+//                    mLanguage=s1.getText().toString();
+//                }
                 if(mLanguage.equals(""))
-                    s1.setError("");
-                else if(languagePair.equals(""))
-                    s2.setError("");
-                else if(mImageUrl.equals(""))
+                    s1.setError("Please choose language");
+//                if(languagePair.equals(""))
+//                    s2.setError("");
+                 if(mImageUrl.equals(""))
                     Toast.makeText(getContext(),"Please Select a Photo or Wait for upload",Toast.LENGTH_LONG).show();
                 else
                 {
@@ -193,7 +198,7 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
         return v;
     }
 
-    void getCodes() {
+    void getOCRCodes() {
         String text =s1.getText().toString();
         Log.d("cjec:",text);
         String f = null,s = null;
@@ -271,15 +276,49 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
         languagePair=f+"-"+s;
     }
     //Button Code
+
+    private void getCodes() {
+        String text =s2.getText().toString();
+        Log.d("cjec:",text);
+        switch(text){
+            case "English":
+                target="en";
+                break;
+            case "Hindi":
+                target="hi";
+                break;
+            case "French":
+                target="fr";
+                break;
+            case "Korean":
+                target="ko";
+                break;
+            case "Japanese":
+                target="ja";
+                break;
+            case "Chinese":
+                target="Chinese";
+                break;
+            case "Germany":
+                target="Germany";
+                break;
+            case "Italian":
+                target="Italian";
+                break;
+            case "Russian":
+                target="Russian";
+                break;
+        }
+    }
     private void imagefrom() {
-        Toast.makeText(getContext(), "I have done my work111", Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext(), "I have done my work111", Toast.LENGTH_LONG).show();
         String[] options = {"Gallery", "Camera"};
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Choose Image From");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(getContext(), "I have done my work", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(), "I have done my work", Toast.LENGTH_LONG).show();
                 if (i == 1) {
                     try {
                         takephoto();
@@ -315,7 +354,7 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
 
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
-        Toast.makeText(getContext(), "I am checking for code" + requestCode, Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext(), "I am checking for code" + requestCode, Toast.LENGTH_LONG).show();
         if (resultCode == RESULT_OK) {
             if (requestCode == IMAGE_CAPTURE_CODE) {
 
@@ -354,35 +393,173 @@ public class fragmentImage extends Fragment implements IOCRCallBack {
         JSONObject jsonObject = null;
         Object level = null;
         JSONObject innerArray3, jsonobject = null;
+        Log.d("response:",response);
         try {
             jsonObject = new JSONObject(response);
+            Log.d("response:", response);
             JSONArray jsonarray = jsonObject.getJSONArray("ParsedResults");
             jsonobject = jsonarray.getJSONObject(0);
             Log.d("nicce", jsonobject.toString());
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         assert jsonobject != null;
-
-
         textToBeTranslated=jsonobject.getString("ParsedText").trim().replaceAll("\r\n"," ");
         gText.setText(textToBeTranslated);
         System.out.println("gggooooodd" + textToBeTranslated);
-
     }
     void Translate(String textToBeTranslated,String languagePair){
-        TranslatorBackgroundTask translatorBackgroundTask= new TranslatorBackgroundTask(context);
-        String a=translatorBackgroundTask.execute(textToBeTranslated,languagePair).toString(); // Returns the translated text as a String
-        for (int i=0; i<10; i++) {
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+//        TranslatorBackgroundTask translatorBackgroundTask= new TranslatorBackgroundTask(context);
+//        String a=translatorBackgroundTask.execute(textToBeTranslated,languagePair).toString(); // Returns the translated text as a String
+//        for (int i=0; i<10; i++) {
+//            try {
+//                Thread.sleep(500);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        tText.setText(translatorBackgroundTask.mainResult); // Logs the result in Android Monitor
+        if(gText.getText().toString().equals(""))
+            Toast.makeText(getContext(),"Please Enter Text!",Toast.LENGTH_LONG).show();
+        else
+        {
+            getCodes();
+            if(s2.getText().toString().equals(""))
+                s2.setError("Select Language!");
+            else {
+                s2.setError(null);
+                identify();
             }
         }
-        tText.setText(translatorBackgroundTask.mainResult); // Logs the result in Android Monitor
+
+    }
+
+//    private void getCodes() {
+//        String text =s2.getText().toString();
+//        Log.d("cjec:",text);
+//        switch(text){
+//            case "English":
+//                target="en";
+//                break;
+//            case "Hindi":
+//                target="hi";
+//                break;
+//            case "French":
+//                target="fr";
+//                break;
+//            case "Korean":
+//                target="ko";
+//                break;
+//            case "Japanese":
+//                target="ja";
+//                break;
+//            case "Chinese":
+//                target="Chinese";
+//                break;
+//            case "Germany":
+//                target="Germany";
+//                break;
+//            case "Italian":
+//                target="Italian";
+//                break;
+//            case "Russian":
+//                target="Russian";
+//                break;
+//        }
+//    }
+
+    private void identify()
+    {
+        if(gText.getText().toString().equals(""))
+            return;
+        final FirebaseLanguageIdentification identifier= FirebaseNaturalLanguage.getInstance().getLanguageIdentification();
+        identifier.identifyLanguage(gText.getText().toString()).addOnSuccessListener(new OnSuccessListener<String>() {
+            @Override
+            public void onSuccess(String s) {
+                if(s.equals("und"))
+                {
+//                   Toast.makeText(getContext(),"Lang not found",Toast.LENGTH_LONG).show();
+                    tText.setText("Language not found and cannot be translated");
+                }
+                else{
+                    Log.d("My Language Detected :",s);
+                    getLanguageCode(s);
+                }
+            }
+        });
+    }
+    private void getLanguageCode(String lang){
+        int langCode=0;
+        langCode=FirebaseTranslateLanguage.languageForLanguageCode(lang);
+//        switch (lang){
+//            case"hi":langCode= FirebaseTranslateLanguage.HI;
+//                break;
+//            case"ko":langCode= FirebaseTranslateLanguage.KO;
+//                break;
+//            case"ja":langCode= FirebaseTranslateLanguage.JA;
+//                break;
+//            case"en":langCode= FirebaseTranslateLanguage.EN;
+//                break;
+//            case"fr":langCode= FirebaseTranslateLanguage.FR;
+//                break;
+//        }
+        translateText(langCode);
+    }
+    private void translateText(int langCode){
+        FirebaseTranslatorOptions options = new FirebaseTranslatorOptions.Builder()
+                .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.KO).build();
+        switch (target) {
+            case "ko":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.KO).build();
+                break;
+            case "en":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.EN).build();
+                break;
+            case "hi":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.HI).build();
+                break;
+            case "ja":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.JA).build();
+                break;
+            case "fr":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.FR).build();
+                break;
+            case "Chinese":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.ZH).build();
+                break;
+            case "Germany":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.DE).build();
+                break;
+            case "Italian":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.IT).build();
+                break;
+            case "Russian":
+                options = new FirebaseTranslatorOptions.Builder()
+                        .setSourceLanguage(langCode).setTargetLanguage(FirebaseTranslateLanguage.RU).build();
+                break;
+        }
+
+        final FirebaseTranslator translator=FirebaseNaturalLanguage.getInstance().getTranslator(options);
+        FirebaseModelDownloadConditions conditions=new FirebaseModelDownloadConditions.Builder().build();
+        translator.downloadModelIfNeeded(conditions).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                translator.translate(gText.getText().toString()).addOnSuccessListener(new OnSuccessListener<String>() {
+                    @Override
+                    public void onSuccess(String s) {
+                        tText.setText(s);
+                    }
+                });
+            }
+        });
     }
     private static class OCRAsyncTask extends AsyncTask {
 

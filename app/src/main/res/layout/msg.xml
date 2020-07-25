@@ -2,62 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="#111111"
     android:layout_height="match_parent"
-    >
-<com.google.android.material.appbar.MaterialToolbar
-    android:layout_width="match_parent"
-    android:layout_height="70dp"
-    android:background="#212121"
-    android:id="@+id/topBar"
-    >
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/pu"
-        android:id="@+id/receiverimg"
-        />
-    <TextView
-        android:id="@+id/receiverph"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="username"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/colorPrimary"
-        />
-</com.google.android.material.appbar.MaterialToolbar>
+    android:background="#111111"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#212121">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/receiverimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/pu" />
+
+        <TextView
+            android:id="@+id/receiverph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="username"
+            android:textColor="@color/colorPrimary" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/topBar"
         android:layout_above="@+id/msgsend"
+        android:layout_below="@+id/topBar"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginRight="30dp"
-        >
+        android:layout_marginBottom="10dp">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatmsg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            >
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent" />
     </FrameLayout>
+
     <EditText
         android:id="@+id/msgsend"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="25dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#212121"
-        >
-    </EditText>
+        android:paddingStart="20dp"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/send"

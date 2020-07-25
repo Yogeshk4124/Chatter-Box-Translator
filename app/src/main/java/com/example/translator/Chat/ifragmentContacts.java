@@ -218,14 +218,11 @@ private void getContact()
             ImageView images = row.findViewById(R.id.profile_pic);
             TextView myTitle = row.findViewById(R.id.name);
             TextView myDescription = row.findViewById(R.id.phone);
-
             // now set our resources on views
             myTitle.setText(rTitle.get(position));
             myDescription.setText(rDescription.get(position));
             Picasso.get().load(rImgs.get(position)).into(images);
 //            Log.d("img:",rImgs.get(position));
-
-
             return row;
         }
     }
