@@ -21,9 +21,21 @@ The app consists of 5 main tasks:
 ## API Used
 * Yandex Translate Web API : https://translate.yandex.com/
 * OCR API: [https://ocr.space/ocrapi](https://ocr.space/ocrapi)
+* Google
 
 ## Screenshot
 <img src="Screenshots/1VerifyCrop.png" width="300"><img src="Screenshots/2ProfileInfoCrop.png" width="300">
 <img src="Screenshots/3VoiceTranslationCrop.png" width="300"><img src="Screenshots/4textTranslationCrop.png" width="300">
 <img src="Screenshots/5Image TranslationCrop.png" width="300"><img src="Screenshots/6ChatCrop.png" width="300">
 <img src="Screenshots/7Account.png" width="300">
+
+## Improvements to be added
+* Responsive Layout
+* Minor Bugs
+
+
+## Note
+All the API used are free of cost(may not be as accurate as paid API)
+
+
+Feature request and bug reports are welcome.
