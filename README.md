@@ -21,7 +21,7 @@ The app consists of 5 main tasks:
 ## API Used
 * Yandex Translate Web API : https://translate.yandex.com/
 * OCR API: [https://ocr.space/ocrapi](https://ocr.space/ocrapi)
-* Google
+* Google specch recognition
 
 ## Screenshot
 <img src="Screenshots/1VerifyCrop.png" width="300"><img src="Screenshots/2ProfileInfoCrop.png" width="300">
